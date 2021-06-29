@@ -60,6 +60,6 @@ export const deleteTodoAsync = createAsyncThunk('todos/deleteTodoAsync', async p
     );
 
     if (res.ok) {
-        return { id: payload.id };
+        return { ...payload };
     }
 });

@@ -11,7 +11,9 @@ const TodoForm = () => {
         e.preventDefault();
 
         const value = inputRef.current.value;
+        if (!value) return;
         dispatch(addTodoAsync({ text: value, isCompleted: false }));
+        inputRef.current.value = '';
     };
 
     return (
